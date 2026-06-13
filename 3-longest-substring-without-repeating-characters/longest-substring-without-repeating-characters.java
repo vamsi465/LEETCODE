@@ -6,19 +6,13 @@ class Solution {
       int left=0;
       Set<Character> set=new HashSet<>();
       for(int r=0;r<s.length();r++) {
-        if(set.contains(s.charAt(r)))
+        while(set.contains(s.charAt(r)))
         {
-            left++;
-            count=0;
-            set=new HashSet<>();
-            r=left;
+            set.remove(s.charAt(left));
+             left++;
         }
         set.add(s.charAt(r));
-        count++;
-        if(count>max_cnt)
-        {
-            max_cnt=count;
-        }
+        max_cnt=Math.max(max_cnt,r-left+1);
       }
       return max_cnt;
     }
