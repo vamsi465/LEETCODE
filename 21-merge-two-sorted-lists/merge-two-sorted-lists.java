@@ -30,17 +30,12 @@ class Solution {
             }
 
         }
-        while(temp1!=null) {
-            temp.next=temp1;
-            temp=temp.next;
-            temp1=temp1.next;
-
-        }
-        while(temp2!=null)
+        if(temp1!=null)
         {
-                temp.next=temp2;
-                temp=temp.next;
-                temp2=temp2.next;
+            temp.next=temp1;
+        }
+        else {
+            temp.next=temp2;
         }
             return dummy.next;
         }
